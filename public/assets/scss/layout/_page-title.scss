@@ -1,0 +1,37 @@
+/*== Page Title Area Start ==*/
+#page-title-area {
+  background-image: url("../img/page-title-bg.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+  padding: 42px 0 50px;
+  z-index: 1;
+
+  &:after {
+    @include bg-rgba($black, 0.85);
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+  }
+
+  .page-title-content {
+    h1 {
+      color: $white;
+      text-transform: uppercase;
+      font-family: $font-montserrat;
+      @include font-noline(42);
+      @include font-weight(400);
+
+      @media #{$smallphone} {
+        @include font-noline(32);
+      }
+    }
+  }
+}
+
+/*== Page Title Area End ==*/

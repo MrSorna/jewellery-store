@@ -1,0 +1,197 @@
+/*== Banner // Slider Area Start ==*/
+#banner-area {
+  position: relative;
+
+  &:after {
+    background-color: $black-soft;
+    content: '';
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: -1px;
+    width: 100%;
+    -webkit-clip-path: polygon(0% 75%, 0% 0%, 100% 0%, 100% 35%);
+    clip-path: polygon(0% 75%, 0% 0%, 100% 0%, 100% 35%);
+    z-index: -1;
+  }
+
+  #banner-carousel {
+    .single-carousel-wrap {
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      position: relative;
+      padding: 200px 0;
+      z-index: 1;
+
+      @media #{$smallphone, $smartphone} {
+        padding: 80px 0;
+      }
+
+      @media #{$tablet} {
+        padding: 120px 0;
+      }
+
+      &:after {
+        @include bg-rgba($light-white, 0.7);
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        display: block;
+      }
+
+      .banner-caption {
+        padding: 0 15px;
+        max-width: 1140px;
+        margin: auto;
+
+        h4 {
+          @include font-size($font-size-base);
+          font-family: $font-montserrat;
+          text-transform: uppercase;
+          color: $brand-color;
+        }
+
+        h2 {
+          @include font-noline(72);
+          line-height: 1.2;
+          text-transform: capitalize;
+          margin: 9px 0 27px;
+
+          @media #{$smallphone, $smartphone} {
+            @include font-noline(24);
+            margin: 9px 0 15px;
+          }
+
+          @media #{$tablet} {
+            @include font-noline(35);
+          }
+        }
+
+        p {
+          font-style: italic;
+          font-family: $font-droid-sarif;
+          color: $black;
+        }
+
+        .btn-long-arrow {
+          margin-top: 20px;
+
+          @media #{$smallphone, $smartphone} {
+            margin-top: 10px;
+          }
+        }
+      }
+
+      &.slide-item-1 {
+        background-image: url("../img/slide-img-1.jpg");
+      }
+
+      &.slide-item-2 {
+        background-image: url("../img/slide-img-2.jpg");
+      }
+
+      &.slide-item-3 {
+        background-image: url("../img/slide-img-3.jpg");
+      }
+
+      &.slide-item-4 {
+        background-image: url("../img/slide-img-4.jpg");
+      }
+
+      &.slide-item-5 {
+        background-image: url("../img/slide-img-5.jpg");
+      }
+
+      &.home_6_slide_1 {
+        background-image: url("../img/home_6_slide_1.jpg");
+      }
+
+      &.home_6_slide_2 {
+        background-image: url("../img/home_6_slide_2.jpg");
+      }
+    }
+  }
+
+  .owl-dots {
+    position: absolute;
+    right: 60px;
+    bottom: 60px;
+
+    @media #{$smallphone, $smartphone} {
+      display: none;
+    }
+  }
+
+  // Slide Caption Animation
+  .banner-caption {
+    .hide {
+      @include opacity(0);
+      @include transition(0.4s);
+    }
+  }
+
+  // Banner Style 2
+  &.banner__2 {
+    &:after {
+      display: none;
+    }
+  }
+
+  // Banner Style 3
+  &.banner__3 {
+    &:after {
+      display: none;
+    }
+
+    #banner-carousel {
+      .single-carousel-wrap {
+
+        &:after {
+          display: none;
+        }
+
+        .banner-caption {
+          text-align: left;
+
+          h2, .btn-long-arrow {
+            color: $white;
+            margin-left: 0;
+          }
+          p {
+            color: $light-white;
+          }
+
+          .btn-long-arrow {
+            color: $white;
+            margin-left: 0;
+
+            &:after {
+              display: none;
+            }
+
+            &:hover {
+              color: $brand-color;
+            }
+          }
+        }
+
+        &.home_4_slide_1 {
+          background-image: url("../img/home_4_slide_1.jpg");
+        }
+
+        &.home_4_slide_2 {
+          background-image: url("../img/home_4_slide_2.jpg");
+        }
+      }
+    }
+
+  }
+
+}
+
+/*== Banner // Slider Area End ==*/

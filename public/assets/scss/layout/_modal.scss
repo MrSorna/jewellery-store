@@ -1,0 +1,131 @@
+.modal {
+  display: block !important;
+  opacity: 0;
+  visibility: hidden;
+  z-index: -999;
+}
+
+.modal.show {
+  opacity: 1;
+  visibility: visible;
+  z-index: 9999;
+}
+
+// Body Popup Modal
+.body-popup-modal-area {
+  @include bg-rgba($black, 0.9);
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: none;
+  height: 100%;
+  width: 100%;
+  z-index: 99;
+
+  .modal-container {
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.modal-close, .menu-close {
+  @include font-noline(30);
+  cursor: pointer;
+  @include transition(0.4s);
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  height: 30px;
+  width: 30px;
+
+  &:hover {
+    color: $brand-color;
+  }
+}
+
+/*== Search Box Style ==*/
+.search-box-area {
+  margin: auto;
+  width: 60%;
+
+  @media #{$smallphone, $smartphone} {
+    width: 85%;
+  }
+
+  .search-box-form {
+
+    form {
+      position: relative;
+
+      input {
+        border: none;
+        background-color: transparent;
+        border-bottom: 2px solid $gray-color;
+        padding: 10px 40px 10px 15px;
+        text-align: center;
+        color: $paragraph;
+        @include font-size(17);
+        outline: none;
+        @include transition(0.4s);
+        width: 100%;
+
+        &:focus {
+          border-bottom-color: $brand-color;
+        }
+      }
+
+      button {
+        background-color: transparent;
+        @include font-noline(20);
+        color: $gray-color;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        @include transform(translateY(-50%));
+        @include transition(0.4s);
+
+        &:hover {
+          color: $brand-color;
+        }
+      }
+    }
+  }
+}
+
+// Quick View Modal
+#quickView {
+  .modal-dialog {
+    max-width: 900px;
+
+    .close {
+      background-color: $brand-color;
+      @include border-radius(50%);
+      @include transition(0.4s);
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      z-index: 9;
+      width: 25px;
+
+      span {
+        display: block;
+        padding: 4px;
+      }
+    }
+  }
+
+  .quick-view-content {
+    padding: 20px;
+
+    .product-thumbnail-wrap {
+      .owl-thumbs {
+        .owl-thumb-item {
+          height: 70px;
+          width: 70px;
+        }
+      }
+    }
+  }
+}

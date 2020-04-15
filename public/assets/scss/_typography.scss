@@ -1,0 +1,602 @@
+/*== Theme Typography Style Start ==*/
+html {
+  font-size: 62.5%;
+}
+
+body {
+  @include font-size($font-size-base);
+  @include font-weight(400);
+  font-family: $font-montserrat;
+  color: $paragraph;
+  overflow-x: hidden;
+}
+
+a {
+  @include transition(0.4s);
+
+  &:hover, &:focus {
+    color: $brand-color;
+    outline: none;
+    text-decoration: none;
+  }
+}
+
+p {
+  margin-bottom: 15px;
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  @include font-weight(700);
+  font-family: $font-playfair-display;
+  color: $black-soft;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+
+  li {
+    list-style: none;
+  }
+}
+
+strong {
+  @include font-weight(700);
+}
+
+figure {
+  margin: 0;
+}
+
+button, button.btn {
+  outline: none;
+  border: none;
+  &:focus, &:active {
+    outline: none;
+    @include box-shadow(none);
+  }
+}
+
+.ruby-container {
+  padding: 0 4%;
+}
+
+// Custom Padding Classes
+.p-9 {
+  padding: 90px 0;
+
+  @media #{$smallphone,$smartphone} {
+    padding: 45px 0;
+  }
+
+  @media #{$tablet} {
+    padding: 60px 0;
+  }
+}
+
+.pt-9 {
+  padding-top: 90px;
+
+  @media #{$smallphone,$smartphone} {
+    padding-top: 45px;
+  }
+
+  @media #{$tablet} {
+    padding-top: 60px;
+  }
+}
+
+// Custom Margin Classes
+.mt-9 {
+  margin-top: 90px;
+
+  @media #{$smallphone,$smartphone} {
+    margin-top: 45px;
+  }
+
+  @media #{$tablet} {
+    margin-top: 60px;
+  }
+}
+
+// Section Title Style
+.section-title {
+  position: relative;
+  margin-bottom: 94px;
+
+  &:after {
+    background-image: url(../img/title-line.png);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 27px;
+    left: 0;
+    top: calc(100% + 24px);
+  }
+
+  h2 {
+    @include font-noline(36);
+    line-height: 1.2;
+    margin-bottom: 17px;
+    margin-top: -9px;
+
+    @media #{$smallphone} {
+      @include font-noline(22);
+      margin-top: -5px;
+    }
+  }
+
+  p {
+    font-style: italic;
+    font-family: $font-droid-sarif;
+    @include font-size(15);
+    margin: 0;
+  }
+}
+
+//Owl Carousel
+.owl-carousel {
+  .owl-nav {
+    button {
+      background: $light-white !important;
+      width: 45px;
+      height: 45px;
+      display: inline-block;
+      color: $gray-color;
+      font-size: 22px !important;
+      line-height: 1;
+      position: absolute;
+      left: 0;
+      @include transform(translate(-50%, -50%));
+      top: 50%;
+      @include transition(0.4s);
+
+      &.owl-next {
+        left: auto;
+        right: 0;
+        @include transform(translate(50%, -50%));
+      }
+
+      &:hover {
+        background-color: $brand-color !important;
+        color: $white
+      }
+    }
+  }
+
+  .owl-dots {
+    button {
+      margin-left: 15px;
+      &.active {
+        span {
+          background-color: $brand-color;
+        }
+      }
+
+      span {
+        width: 10px;
+        height: 10px;
+        display: block;
+        background-color: $gray-color;
+        @include border-radius(50%);
+      }
+    }
+  }
+}
+
+// Buttons Styls
+.btn-long-arrow {
+  background-color: transparent;
+  @include font-weight(700);
+  @include font-size(13);
+  font-family: $font-montserrat;
+  font-style: normal;
+  text-transform: uppercase;
+  color: $black;
+  position: relative;
+  display: inline-block;
+  &:after {
+    background: url(../img/arrow.png) left center no-repeat;
+    content: '';
+    float: right;
+    margin-left: 20px;
+    width: 39px;
+    height: 22px
+  }
+
+  &:hover, &:focus, &:active {
+    color: $brand-color;
+    outline: none;
+    @include box-shadow(none);
+
+    &:after {
+      background-position: right center;
+    }
+  }
+}
+
+.btn-add-to-cart {
+  background-color: transparent;
+  border: 2px solid $gray-color;
+  @include border-radius(50px);
+  padding: 10px 20px;
+  @include font-size(11);
+  @include font-weight(700);
+  text-transform: uppercase;
+  color: $black-soft;
+
+  &:hover {
+    background-color: $brand-color;
+    border-color: $brand-color;
+    color: $white;
+  }
+
+  &.disabled {
+    pointer-events: none;
+    @include opacity(0.6);
+  }
+}
+
+.btn-login {
+  background-color: transparent;
+  border: 2px solid lighten($gray-color, 20%);
+  color: $black-soft;
+  @include font-weight(700);
+  padding: 10px 35px;
+  cursor: pointer;
+  margin-top: 10px;
+  @include transition(0.4s);
+
+  &:hover {
+    background-color: $brand-color;
+    border-color: $brand-color;
+    color: $white;
+  }
+}
+
+.vertical-text {
+  @include font-size($font-size-base);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: $brand-color;
+  font-family: $font-montserrat;
+  position: relative;
+  display: inline-block;
+  @include rotate(-90);
+  @include transform-origin(left top 0);
+  margin: 0;
+  font-style: normal;
+
+  &:after {
+    background-color: $black-soft;
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    left: calc(100% + 20px);
+    width: 35px;
+    height: 2px;
+  }
+}
+
+// tooltip Style
+.tooltip {
+  .tooltip-inner {
+    background-color: $brand-color;
+    @include font-size(13);
+  }
+
+  .arrow {
+    &:before {
+      border-left-color: $brand-color !important;
+    }
+  }
+}
+
+#new-products-area,
+#featured-products-area,
+#new-products-two {
+  overflow: hidden;
+}
+
+// Scroll to top
+.scrolltotop {
+  background-color: $gray-color;
+  color: $white;
+  @include font-noline(22);
+  @include transition(0.4s);
+  line-height: 38px;
+  text-align: center;
+  display: block;
+  height: 40px;
+  width: 40px;
+  position: fixed;
+  bottom: -30px;
+  @include opacity(0);
+  right: 30px;
+  z-index: 95;
+
+  &.show {
+    bottom: 40px;
+    @include opacity(1);
+  }
+
+  &:hover, &:active, &:focus {
+    background-color: $brand-color;
+    color: $white;
+    @include transition(0.4s);
+  }
+}
+
+// Custom  Padding On Gird\
+.custom-padding {
+  margin-left: -2px;
+  margin-right: -2px;
+  [class*="col"] {
+    padding: 0 2px;
+  }
+}
+
+// Breadcrump Style
+.breadcrumb {
+  @include justify-content(center);
+  background-color: transparent;
+  @include border-radius(0);
+  margin: 0;
+  padding-bottom: 0;
+
+  li {
+    margin-right: 40px;
+    position: relative;
+    &:last-child {
+      margin-right: 0;
+
+      &:last-child {
+        &:after {
+          display: none;
+        }
+      }
+    }
+    &:after {
+      content: '\f105';
+      font-family: $font-font_awesome;
+      color: $light-white;
+      position: absolute;
+      left: calc(100% + 20px);
+    }
+    a {
+      font-family: $font-droid-sarif;
+      color: $light-white;
+      @include font-noline(15);
+      font-style: italic;
+
+      &:hover, &:active, &:focus, &.active {
+        color: $brand-color;
+      }
+
+      &.active {
+        pointer-events: none;
+      }
+    }
+  }
+}
+
+// Sidebar List Style
+.sidebar-list {
+  margin-top: -12px;
+  li {
+    border-bottom: 1px dashed lighten($gray-color, 20%);
+    padding: 8px 0;
+
+    a {
+      color: $black-soft;
+      font-style: italic;
+      font-family: $font-droid-sarif;
+      @include transition(0.1s);
+      &:hover {
+        color: $brand-color;
+        padding-left: 4px;
+      }
+    }
+  }
+}
+
+// Select Menu Style
+.nice-select {
+  @include border-radius(0px);
+  float: none;
+  height: auto;
+  text-transform: capitalize;
+  line-height: inherit;
+  padding: 5px 30px 5px 15px;
+  width: 200px;
+
+  @media #{$smallphone} {
+    width: 160px;
+  }
+
+  span.current {
+    font-weight: 700;
+    @include font-noline(13);
+  }
+
+  .list {
+    @include border-radius(0px);
+    width: 100%;
+
+    .option {
+      line-height: 30px;
+      min-height: 30px;
+    }
+  }
+}
+
+// Pagination Style
+.page-pagination {
+  .pagination {
+    li {
+      a {
+        background-color: $white;
+        color: $paragraph;
+        outline: 1px solid lighten($gray-color, 20%);
+        display: inline-block;
+        padding: 8px 15px;
+        @include font-weight(700);
+        @include font-noline(12);
+
+        &:hover, &:focus, &.current {
+          background-color: $brand-color;
+          outline-color: $brand-color;
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+// Custom Checkbox Style
+.custom-checkbox, .custom-radio {
+  label, .custom-control-label {
+    color: $black-soft;
+    @include font-noline(15);
+    line-height: 1;
+    padding-left: 10px;
+    cursor: pointer;
+
+    @media #{$smallphone} {
+      @include font-noline(13);
+    }
+
+    &:before {
+      background-color: transparent;
+      border: 1px solid lighten($gray-color, 10%);
+      @include border-radius(0);
+      height: 15px;
+      top: 0;
+      width: 15px;
+    }
+
+    &:after {
+      background-size: 10px 10px;
+      height: 15px;
+      top: 0;
+      width: 15px;
+    }
+
+    a {
+      color: $black-soft;
+      @include font-weight(500);
+
+      &:hover {
+        color: $brand-color;
+      }
+    }
+  }
+
+  input, .custom-control-input {
+    outline: none;
+
+    &:focus {
+      ~ .custom-control-label, label {
+        &:before {
+          @include box-shadow(none);
+        }
+      }
+    }
+
+    &:checked {
+      ~ .custom-control-label, label {
+        &:before {
+          background-color: $brand-color;
+          border-color: $brand-color;
+        }
+      }
+    }
+  }
+}
+
+// Custom Radio Button Style
+.custom-radio {
+  label, .custom-control-label {
+    &:before {
+      @include border-radius(50%);
+      height: 14px;
+      width: 14px;
+    }
+
+    &:after {
+      background-position: 1px 1px;
+      background-size: 8px 8px;
+      left: -13px;
+      top: 2px;
+      height: 10px;
+      width: 10px;
+    }
+  }
+}
+
+// Responsive Table Scrllbar Style
+.table-responsive::-webkit-scrollbar-thumb {
+  border-radius: 0;
+  border: 0;
+  background-color: $brand-color;
+}
+
+.table-responsive::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 15px;
+  height: 10px;
+  @include bg-rgba($brand-color, 0.3);
+}
+
+// Blockquote Style
+blockquote, .blockquote {
+  background-color: darken($light-white, 5%);
+  @include font-noline(15);
+  line-height: 30px;
+  color: $black-soft;
+  font-family: $font-droid-sarif;
+  font-weight: 700;
+  font-style: italic;
+  padding: 100px 30px 30px;
+  margin-bottom: 15px;
+  position: relative;
+  text-align: center;
+
+  * {
+    margin: 0;
+  }
+
+  @media #{$smallphone} {
+    padding: 100px 15px 15px;
+  }
+
+  &:after {
+    content: '\f10d';
+    font-family: $font-font_awesome;
+    @include font-noline(50);
+    @include opacity(0.2);
+    position: absolute;
+    left: 50%;
+    @include translate(-50%, 0);
+    top: 40px;
+  }
+}
+
+// Address Style
+address {
+  margin-bottom: 15px;
+
+  p {
+    margin-bottom: 5px;
+  }
+
+  strong, b {
+    color: $black;
+  }
+}
+
+/*== Theme Typography Style End ==*/

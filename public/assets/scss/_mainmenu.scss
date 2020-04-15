@@ -1,0 +1,377 @@
+/*== Navigation Area Start ==*/
+#mainmenu {
+  @media #{$smallphone, $smartphone, $tablet} {
+    display: none;
+  }
+
+  ul {
+    text-align: center;
+    li {
+      display: inline-block;
+      position: relative;
+
+      &:hover, &.current {
+        a {
+          color: $brand-color;
+        }
+      }
+
+      &.dropdown-show {
+        &:after {
+          color: $light-white;
+          content: '\f107';
+          display: block;
+          font-family: $font-font_awesome;
+          position: absolute;
+          right: 5px;
+          top: 50%;
+          @include translate(0, -50%);
+          @include font-weight(700);
+          @include opacity(0.6);
+        }
+
+        .dropdown-show {
+          &:after {
+            position: absolute;
+            display: block;
+            content: '\f105';
+            font-family: $font-font_awesome;
+            right: 10px;
+            top: 50%;
+            @include font-noline(15);
+            @include translate(0, -50%);
+            @include font-weight(700);
+          }
+        }
+
+        &:hover {
+
+          &:after {
+            color: $brand-color;
+          }
+
+          & > .dropdown-nav {
+            @include opacity(1);
+            @include transform(translateY(0));
+            visibility: visible;
+            pointer-events: visible;
+          }
+        }
+      }
+
+      a {
+        color: $white;
+        display: block;
+        @include font-size(13);
+        text-transform: uppercase;
+        position: relative;
+        padding: 10px 20px;
+      }
+
+      .dropdown-nav {
+        background-color: $white;
+        text-align: left;
+        left: 0;
+        top: 100%;
+        @include box-shadow(0 1px 3px rgba(0, 0, 0, 0.2));
+        @include transform(translateY(20px));
+        @include opacity(0);
+        @include transition(0.3s);
+        pointer-events: none;
+        visibility: hidden;
+        position: absolute;
+        padding: 6px 0;
+        width: 220px;
+        z-index: 9;
+
+        li {
+          display: block;
+
+          &:hover {
+            & > .dropdown-nav {
+              @include opacity(1);
+              @include transform(translateY(0));
+              visibility: visible;
+              pointer-events: visible;
+            }
+
+            a {
+              color: $brand-color;
+            }
+
+            .sub-dropdown {
+              li {
+                a {
+                  color: inherit;
+                }
+              }
+            }
+          }
+
+          a {
+            color: $paragraph;
+            @include font-noline(13);
+            @include font-weight(700);
+            font-style: italic;
+            font-family: $font-droid-sarif;
+            letter-spacing: 0.8px;
+            padding: 6px 20px;
+            text-transform: capitalize;
+
+            &:hover {
+              color: $brand-color;
+            }
+
+            &:after {
+              display: none;
+            }
+          }
+
+          .sub-dropdown {
+            top: -6px;
+            left: calc(100% + 1px);
+
+            li {
+              a {
+                &:hover {
+                  color: $brand-color;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .mega-menu-wrap {
+    @include flexbox();
+    @include flex-wrap(no-wrap);
+    left: -50%;
+    padding: 30px 25px !important;
+    width: auto !important;
+    white-space: nowrap;
+
+    .mega-menu-item {
+      margin-right: 50px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &:hover {
+        a {
+          color: inherit;
+
+          &.mega-item-title {
+            color: $black-soft;
+          }
+        }
+      }
+
+      .mega-item-title {
+        @include font-size(14);
+        @include font-weight(700);
+        color: $black-soft;
+        text-transform: uppercase;
+        border-bottom: 1px solid $ash-color;
+        display: block;
+        margin-bottom: 15px;
+        padding: 0;
+        padding-bottom: 5px;
+
+        &:after {
+          display: none;
+        }
+      }
+
+      ul {
+        text-align: left;
+        li {
+          display: block;
+
+          &:hover {
+            a {
+              color: inherit;
+            }
+          }
+
+          a {
+            color: $paragraph;
+            font-weight: 400;
+            @include font-noline(13);
+            font-family: $font-droid-sarif;
+            font-style: italic;
+            @include font-weight(700);
+            text-transform: capitalize;
+            line-height: 30px;
+            padding: 0;
+
+            &:hover {
+              color: $brand-color;
+            }
+
+            &:after {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Responsive Menu Style
+.slicknav_menu {
+  background-color: transparent;
+  left: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+
+  @media #{$desktop} {
+    display: none;
+  }
+
+  .slicknav_btn {
+    background-color: transparent;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    padding-right: 25px;
+    left: 50%;
+    float: none;
+    @include translate(-50%, -50%);
+    top: 50%;
+    z-index: 97;
+
+    &.slicknav_open {
+      .slicknav_icon {
+        .slicknav_icon-bar {
+          &:nth-child(1) {
+            @include rotate(135);
+            top: 8px;
+          }
+          &:nth-child(2) {
+            display: none;
+          }
+          &:nth-child(3) {
+            @include rotate(-135);
+            top: 8px;
+          }
+        }
+      }
+    }
+
+    .slicknav_icon {
+      position: relative;
+      height: 15px;
+      width: 30px;
+
+      &:before {
+        display: none;
+      }
+
+      .slicknav_icon-bar {
+        background-color: $gray-color;
+        @include box-shadow(none);
+        position: absolute;
+        left: 0;
+        top: 0;
+        margin: 0;
+        @include transition(0.3s);
+        height: 2px;
+        width: 100%;
+
+        &:nth-child(2) {
+          top: 50%;
+        }
+
+        &:nth-child(3) {
+          top: 100%;
+        }
+      }
+    }
+  }
+
+  .slicknav_nav {
+    background-color: $black-soft;
+    left: 0;
+    position: absolute;
+    padding: 5px 4%;
+    margin-top: -1px;
+    top: 100%;
+    width: 100%;
+    max-height: 300px;
+    overflow: auto;
+    z-index: 97;
+
+    ul {
+      margin-left: 0;
+      li {
+        margin: 5px 0;
+        a {
+          margin: 0;
+          @include border-radius(0);
+          position: relative;
+          padding: 2px 0;
+
+          &:hover, &:focus, &:active {
+            background-color: transparent;
+            color: $white;
+            @include border-radius(0);
+          }
+        }
+      }
+
+      ul {
+        margin-left: 20px;
+      }
+    }
+  }
+
+  .slicknav_arrow {
+    @include font-noline(20);
+    font-size: 2rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40px;
+    text-align: right;
+  }
+}
+
+// Home Layout 2 Navigation
+.navigation-area-wrap {
+  @include bg-rgba($black, 0.9);
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: none;
+  height: 100%;
+  width: 100%;
+  z-index: 99;
+
+  .main-menu-wrap {
+    @include bg-rgba($black, 0.95);
+    padding: 20px 0;
+    margin-top: 120px;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+.menu-open {
+  @include font-noline(30);
+  color: $black;
+}
+
+.menu-close {
+  top: 30px;
+  left: 50%;
+  @include translate(-50%, 0);
+}
+
+/*== Navigation Area End ==*/

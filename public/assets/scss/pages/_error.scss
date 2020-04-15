@@ -1,0 +1,31 @@
+/*== 404 Error Page Start ==*/
+.error-page-content-wrap {
+  @include font-size(16);
+  h2 {
+    @include font-noline(100);
+    font-family: $font-droid-sarif;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    animation: swing 0.5s 0.5s forwards;
+    margin-top: -24px;
+
+    @media #{$smallphone} {
+      @include font-size(80);
+    }
+  }
+
+  h3 {
+    font-family: $font-montserrat;
+    @include font-size(32);
+    color: $brand-color;
+
+    @media #{$smallphone} {
+      @include font-size(20);
+    }
+  }
+
+  .btn-add-to-cart {
+    display: inline-block;
+    padding: 20px 40px;
+    margin-top: 30px;
+  }
+}

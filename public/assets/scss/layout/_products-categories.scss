@@ -1,0 +1,68 @@
+/*== Products by Category Area Start ==*/
+.single-cat-item {
+  @include transition(0.4s);
+
+  &:hover {
+    .category-thumb {
+      img {
+        @include transform(scale(1.1));
+      }
+
+      .category-name {
+        top: 70%;
+      }
+    }
+  }
+
+  .category-thumb {
+    position: relative;
+    overflow: hidden;
+    img {
+      @include transition(0.4s);
+    }
+
+    .category-name {
+      border: 2px solid $white;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      @include translate(-50%, -50%);
+      white-space: nowrap;
+      padding: 4px;
+      @include transition(0.4s);
+      width: 90%;
+
+      a {
+        background-color: $white;
+        color: $black-soft;
+        display: block;
+        @include font-size(14);
+        @include font-weight(700);
+        font-family: $font-playfair-display;
+        text-transform: uppercase;
+        margin: 0;
+        padding: 18px 25px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.large-size-cate {
+  .single-cat-item {
+    margin-bottom: 15px;
+
+    @media #{$desktop} {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.small-size-cate {
+  margin-top: -15px;
+  .single-cat-item {
+    margin-top: 15px;
+  }
+}
+
+/*== Products by Category Area End ==*/

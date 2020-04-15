@@ -1,0 +1,94 @@
+/*============================
+Start FAQ Page Wrapper
+===============================*/
+.single-subject-by-faq-wrap {
+  margin-bottom: 88px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @media #{$tablet} {
+    margin-bottom: 58px;
+  }
+
+  @media #{$smartphone} {
+    margin-bottom: 45px;
+  }
+
+  @media #{$smallphone} {
+    margin-bottom: 40px;
+  }
+
+  h3 {
+    @include font-noline(32);
+    font-weight: 600;
+    margin-bottom: 46px;
+
+    @media #{$smartphone} {
+      margin-bottom: 20px;
+      @include font-noline(24);
+    }
+
+    @media #{$smallphone} {
+      margin-bottom: 30px;
+      @include font-noline(22);
+    }
+  }
+
+  .brand-accordion {
+    .card {
+      margin-bottom: 15px;
+
+      &:last-child{
+        margin-bottom: 0;
+      }
+
+      .card-header {
+        button {
+          display: block;
+          position: relative;
+          text-align: left;
+          width: 100%;
+          background: transparent;
+          font-size: 16px;
+          font-weight: 600;
+          padding: 5px 0;
+
+          @media #{$smallphone} {
+            font-size: 14px;
+          }
+
+          &:after {
+            content: "+";
+            position: absolute;
+            right: 0;
+            @include font-noline(20);
+            color: $black-soft;
+            line-height: 1;
+            top: 50%;
+            @include transform(translateY(-50%));
+          }
+
+          &[aria-expanded="true"] {
+            &:after {
+              content: "-";
+            }
+          }
+        }
+      }
+
+      .card-body{
+        border-bottom: 1px solid rgba(0,0,0,.125);
+        font-size: 15px;
+        line-height: 1.6;
+
+        p{
+          &:last-child{
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}

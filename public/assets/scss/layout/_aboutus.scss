@@ -1,0 +1,135 @@
+/*== About Us Area Start ==*/
+.about-image-wrap {
+  overflow: hidden;
+  background-color: #fafafa;
+
+  a {
+    &:hover {
+      img {
+        @include scale(1.1);
+      }
+    }
+
+    img {
+      @include transition(0.4s);
+    }
+  }
+}
+
+.about-content-wrap {
+  font-family: $font-droid-sarif;
+
+  h2, h3, h4 {
+    text-transform: uppercase;
+    font-family: $font-montserrat;
+  }
+
+  h2 {
+    @include font-size($font-size-base);
+    color: $brand-color;
+    margin-bottom: 0;
+    margin-top: -5px;
+  }
+
+  h3 {
+    @include font-size(30);
+    margin-bottom: 17px;
+
+    @media #{$smallphone} {
+      @include font-size(20);
+    }
+  }
+
+  .about-text {
+    font-style: italic;
+    padding-left: 65px;
+    @include font-size(15);
+    line-height: 3rem;
+    position: relative;
+
+    @media #{$smallphone, $smartphone ,$tablet} {
+      padding-left: 0;
+    }
+
+    .vertical-text {
+      position: absolute;
+      left: 0;
+      margin-top: -20px;
+      display: none;
+
+      @media #{$desktop} {
+        display: block;
+      }
+    }
+
+    .btn-long-arrow {
+      margin-top: 11px;
+      margin-left: -8px;
+    }
+  }
+}
+
+// About Style 2
+#aboutUs-area.about__2 {
+  .about-image-wrap {
+    position: relative;
+    z-index: 1;
+
+    @media #{$desktop} {
+      margin-top: -150px;
+    }
+  }
+
+  .about-content-wrap {
+
+    @media #{$desktop} {
+      margin-left: 50px;
+    }
+
+    h3 {
+      font-family: $font-playfair-display;
+      @include font-noline(60);
+      line-height: 1.2;
+      text-transform: capitalize;
+
+      @media #{$smallphone, $smartphone} {
+        @include font-noline(36);
+      }
+
+      @media #{$tablet} {
+        @include font-noline(48);
+      }
+    }
+
+    h4.price {
+      @include font-noline(48);
+      color: $brand-color;
+      margin: 40px 0;
+
+      @media #{$smallphone, $smartphone} {
+        @include font-noline(28);
+        margin: 10px 0;
+      }
+
+      @media #{$tablet} {
+        margin: 10px 0;
+      }
+
+      sup {
+        @include font-noline(24);
+        color: $black-soft;
+        margin-right: 5px;
+
+        @media #{$smallphone, $smartphone} {
+          @include font-noline(17);
+        }
+      }
+    }
+
+    .about-text {
+      padding-left: 0;
+    }
+  }
+}
+
+/*== About Us Area End ==*/

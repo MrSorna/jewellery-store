@@ -1,0 +1,55 @@
+/*== New Collection Area Start ==*/
+#new-collection-area {
+  overflow: hidden;
+
+}
+
+.tab-menu-wrap {
+  justify-content: center;
+  @include font-weight(700);
+  margin-bottom: 60px;
+
+  @media #{$smallphone, $smallphone} {
+    margin-bottom: 30px;
+  }
+
+  li {
+    padding: 0 25px;
+    position: relative;
+
+    @media #{$smallphone} {
+      padding: 0 12px 0 5px;
+    }
+
+    &:last-child {
+      &:after {
+        display: none;
+      }
+    }
+
+    &:after {
+      content: '/';
+      position: absolute;
+      right: 0;
+      top: 0;
+      color: $gray-color;
+    }
+
+    a {
+      color: $black-soft;
+      text-transform: uppercase;
+
+      &:hover, &.active {
+        color: $brand-color;
+      }
+
+      @media #{$smallphone} {
+        @include font-noline(12);
+      }
+    }
+  }
+}
+
+/*== New Collection Area End ==*/
+
+@import "product";

@@ -1,0 +1,129 @@
+/*== Login & Register Content Start ==*/
+.login-register-wrapper {
+  margin-top: -5px;
+  .login-reg-tab-menu {
+    @include justify-content(center);
+    a {
+      @include font-size(22);
+      @include font-weight(700);
+      color: $black-soft;
+      font-family: $font-droid-sarif;
+      margin-right: 50px;
+      position: relative;
+
+      &:after {
+        content: '|';
+        position: absolute;
+        right: -30px;
+        top: 50%;
+        margin-top: -18px;
+        color: $black-soft;
+      }
+
+      &:last-child {
+        margin-right: 0;
+
+        &:after {
+          display: none;
+        }
+      }
+
+      &.active {
+        color: $brand-color;
+      }
+    }
+  }
+}
+
+.login-reg-form-wrap {
+  background-color: $white;
+  @include box-shadow(0 0 6px rgba(0, 0, 0, 0.1));
+  padding: 50px;
+  margin-top: 30px;
+
+  @media #{$smallphone} {
+    padding: 20px;
+  }
+
+  form {
+    margin-top: -20px;
+    .create-account {
+      margin-top: 25px;
+    }
+  }
+}
+
+.single-input-item {
+  margin-top: 20px;
+  label {
+    color: $black-soft;
+    @include font-weight(500);
+    text-transform: capitalize;
+
+    &.required {
+      &:after {
+        content: '*';
+        color: $red;
+        @include font-noline(15);
+        margin-left: 3px;
+        margin-top: 5px;
+      }
+    }
+  }
+
+  input, textarea {
+    background-color: $light-white;
+    border: 1px solid lighten($gray-color, 20%);
+    padding: 15px 20px;
+    outline: none;
+    @include transition(0.4s);
+    width: 100%;
+
+    &:active, &:focus {
+      border-color: $brand-color;
+      background-color: $white;
+    }
+  }
+
+  .forget-pwd {
+    color: $brand-color;
+    @include font-size(15);
+
+    @media #{$smallphone} {
+      @include font-size(13);
+    }
+  }
+
+  .nice-select {
+    width: 100%;
+    padding: 15px 20px;
+    background-color: $light-white;
+    border: 1px solid lighten($gray-color, 20%);
+  }
+
+  button {
+    cursor: pointer;
+    @include transition(0.4s);
+    padding: 15px 40px;
+    @include font-size(14);
+    margin-top: 10px;
+
+    @media #{$smallphone} {
+      padding: 10px 30px;
+    }
+  }
+}
+
+// Fieldset Sty;
+fieldset {
+  margin-top: 30px;
+  legend {
+    border-bottom: 1px solid lighten($gray-color, 20%);
+    color: $black;
+    @include font-size(24);
+    padding-bottom: 10px;
+    text-transform: capitalize;
+  }
+}
+
+/*== Login & Register Content End ==*/

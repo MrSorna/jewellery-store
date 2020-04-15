@@ -1,0 +1,227 @@
+/*== Home 4 Products Area Start ==*/
+#products-area-wrapper {
+  margin-top: -30px;
+
+  .single-category-products {
+    margin-top: 30px;
+    .owl-carousel {
+      &:hover {
+        .owl-nav {
+          @include opacity(1);
+        }
+      }
+
+      .owl-nav {
+        @include opacity(0);
+
+        button {
+          @include translate(0, 0);
+          background-color: lighten($gray-color, 20%) !important;
+
+          &:hover {
+            background-color: $brand-color !important;
+          }
+        }
+      }
+    }
+  }
+
+  .product-category-name-warp {
+    background-image: url("../img/men-pro.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    position: relative;
+    @include align-items(center);
+    @include justify-content(center);
+    z-index: 1;
+
+    @media #{$smallphone, $smartphone, $tablet} {
+      min-height: 400px;
+    }
+
+    &:hover {
+      &:after {
+        @include opacity(1);
+        visibility: visible;
+      }
+
+      .category-title-box {
+        @include opacity(1);
+        visibility: visible;
+        -webkit-animation: zoomIn 500ms ease forwards 250ms;
+        animation: zoomIn 500ms ease forwards 250ms;
+
+        &:after {
+          -webkit-animation: zoomIn 500ms ease forwards 750ms;
+          animation: zoomIn 500ms ease forwards 750ms;
+        }
+
+        &:before {
+          -webkit-animation: zoomIn 500ms ease forwards 500ms;
+          animation: zoomIn 500ms ease forwards 500ms;
+        }
+      }
+    }
+
+    &:after {
+      @include bg-rgba($black, 0.9);
+      @include opacity(0);
+      @include transition(0.4s);
+      visibility: hidden;
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+    }
+
+    .category-title-box {
+      @include align-items(center);
+      @include justify-content(center);
+      @include transition(0.2s);
+      @include opacity(0);
+      @include rotate(45);
+      visibility: hidden;
+      display: block;
+      height: 270px;
+      width: 270px;
+      position: relative;
+
+      @media #{$smallphone, $smartphone, $tablet} {
+        height: 150px;
+        width: 150px;
+      }
+
+      &:after {
+        border: 5px solid $white;
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+      }
+
+      &:before {
+        border: 1px solid $white;
+        content: '';
+        position: absolute;
+        left: 10%;
+        top: 10%;
+        height: 80%;
+        width: 80%;
+      }
+
+      .pro-cate-title {
+        @include font-size(20);
+        text-transform: uppercase;
+        color: $brand-color;
+        font-family: $font-montserrat;
+        @include font-weight(400);
+        position: relative;
+        @include rotate(-45);
+      }
+    }
+
+    &.women {
+      background-image: url("../img/women.jpg");
+    }
+
+    &.clothing {
+      background-image: url("../img/clothing.jpg");
+    }
+
+    &.jewelry {
+      background-image: url("../img/jewelry.jpg");
+    }
+  }
+}
+
+/*== Home 4 Products Area End ==*/
+
+/*== Home 5 Products Area Start ==*/
+#featured-products-wrapper {
+  .products-wrapper {
+    &.products-gird {
+      margin-top: -4px;
+
+      .single-product-item {
+        margin-top: 4px;
+
+        &:after {
+          @include bg-rgba($black-soft, 0.5);
+        }
+
+      }
+    }
+  }
+}
+
+/*== Home 5 Products Area End ==*/
+
+/*== Home 6 Categories Products Area Start ==*/
+#category-feature-product {
+  margin-top: -30px;
+  .single-featured-product {
+    margin-top: 30px;
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+      &:after {
+        @include opacity(1);
+        visibility: visible;
+      }
+
+      img {
+        @include scale(1);
+      }
+    }
+
+    &:after {
+      @include bg-rgba($black-soft, 0.5);
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      pointer-events: none;
+      @include opacity(0);
+      visibility: hidden;
+      @include transition(0.5s);
+      height: 100%;
+      width: 100%;
+    }
+
+    img {
+      @include scale(1.08);
+      @include transition(0.4s);
+    }
+  }
+}
+
+/*== Home 6 Categories Products Area End ==*/
+
+/*== Home 6 Products Area Start ==*/
+#products-area-wrapper {
+  .products-wrapper {
+    overflow: hidden;
+
+    .single-product-item {
+      padding-bottom: 150px;
+    }
+
+    .owl-carousel {
+      .owl-nav {
+        button {
+          @include transform(none);
+        }
+      }
+    }
+  }
+}
+
+/*== Home 6 Categories Products Area End ==*/

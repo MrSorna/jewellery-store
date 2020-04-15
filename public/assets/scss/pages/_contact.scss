@@ -1,0 +1,120 @@
+/*== Contact Page Content Start ==*/
+.contact-method-wrap {
+  margin-top: -30px;
+  .contact-method-item {
+    margin-top: 30px;
+
+    &:hover {
+      .method-icon {
+        &:before {
+          animation: ripple 1s infinite;
+        }
+      }
+    }
+
+    .method-icon {
+      background-color: $brand-color;
+      @include border-radius(50%);
+      @include font-noline(30);
+      line-height: 80px;
+      color: $white;
+      display: block;
+      text-align: center;
+      margin: auto;
+      margin-bottom: 25px;
+      position: relative;
+      height: 80px;
+      width: 80px;
+
+      &:before {
+        background-color: $brand-color;
+        @include border-radius(50%);
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        @include scale(0);
+        display: block;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+      }
+    }
+
+    .method-info {
+      @include font-size(15);
+
+      h3 {
+        color: $black-soft;
+        text-transform: uppercase;
+        @include font-size(16);
+        font-family: $font-montserrat;
+        margin-bottom: 10px;
+      }
+
+      a {
+        color: $paragraph;
+        display: block;
+      }
+    }
+  }
+}
+
+// Ripple Animation For Method Icon
+@keyframes ripple {
+  0%, 35% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
+
+@-webkit-keyframes ripple {
+  0%, 35% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
+
+// Contact Form Start
+.contact-form-wrap {
+  margin-top: 60px;
+
+  h2 {
+    text-transform: uppercase;
+    text-align: center;
+    font-family: $font-montserrat;
+    @include font-size(32);
+
+    @media #{$smallphone, $smartphone} {
+      @include font-size(22);
+    }
+  }
+
+  .alert {
+    margin-bottom: 0;
+    margin-top: 15px;
+    text-align: center;
+  }
+
+  .btn-add-to-cart {
+    margin-top: 15px;
+  }
+}
+
+/*== Contact Page Content End ==*/
